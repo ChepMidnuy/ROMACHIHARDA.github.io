@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мій сайт</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0e0e;
+      --fg: #f0ede6;
+      --accent: #c8ff00;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Unbounded', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      gap: 3rem;
+    }
+
+    h1 {
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .photo-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-wrap img {
+      display: block;
+      width: clamp(260px, 40vw, 520px);
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(20%);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+
+    .photo-wrap:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease;
+      pointer-events: none;
+    }
+
+    .photo-wrap:hover::after {
+      border-color: var(--accent);
+    }
+
+    footer {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Назва сайту</h1>
+
+  <div class="gallery">
+    <div class="photo-wrap">
+      <!-- Заміни photo1.jpg на своє зображення -->
+      <img src="photo1.jpg" alt="Фото 1" />
+    </div>
+    <div class="photo-wrap">
+      <!-- Заміни photo2.jpg на своє зображення -->
+      <img src="photo2.jpg" alt="Фото 2" />
+    </div>
+  </div>
+
+  <footer>© 2026</footer>
+
+</body>
+</html>
